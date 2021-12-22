@@ -6,6 +6,9 @@ const express = require('express')//here express is a function not an object lik
 const { title } = require('process')
 
 const app = express() //app is a variable to store our express application
+const port = process.env.PORT || 3000  //added when we added app to heroku
+
+
 
 /*Define paths for Express congifuration*/
 
@@ -127,8 +130,8 @@ app.get('*', (req, res) => {
 })
 
 
-app.listen(3000, () => {
-    console.log('Server is up on port 3000')
+app.listen(port, () => {
+    console.log('Server is up on port ' + port)
 })
 
 
